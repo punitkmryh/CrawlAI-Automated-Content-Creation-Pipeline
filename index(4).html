@@ -1,0 +1,592 @@
+<html lang="en"><head>
+
+<script class="injected-ffc2e83d85">
+(function(){'use strict';function q(b){var c=0;return function(){return c<b.length?{done:!1,value:b[c++]}:{done:!0}}}function t(b){var c=typeof Symbol!="undefined"&&Symbol.iterator&&b[Symbol.iterator];if(c)return c.call(b);if(typeof b.length=="number")return{next:q(b)};throw Error(String(b)+" is not an iterable or ArrayLike");}var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,c,g){if(b==Array.prototype||b==Object.prototype)return b;b[c]=g.value;return b};
+function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var c=0;c<b.length;++c){var g=b[c];if(g&&g.Math==Math)return g}throw Error("Cannot find global object");}var w=v(this);function x(b,c){if(c)a:{var g=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var l=b[h];if(!(l in g))break a;g=g[l]}b=b[b.length-1];h=g[b];c=c(h);c!=h&&c!=null&&u(g,b,{configurable:!0,writable:!0,value:c})}}
+function y(){this.j=!1;this.g=null;this.u=void 0;this.h=1;this.v=this.l=0;this.i=null}function z(b){if(b.j)throw new TypeError("Generator is already running");b.j=!0}y.prototype.o=function(b){this.u=b};function A(b,c){b.i={I:c,J:!0};b.h=b.l||b.v}y.prototype.return=function(b){this.i={return:b};this.h=this.v};function B(b){this.g=new y;this.h=b}function E(b,c){z(b.g);var g=b.g.g;if(g)return F(b,"return"in g?g["return"]:function(h){return{value:h,done:!0}},c,b.g.return);b.g.return(c);return G(b)}
+function F(b,c,g,h){try{var l=c.call(b.g.g,g);if(!(l instanceof Object))throw new TypeError("Iterator result "+l+" is not an object");if(!l.done)return b.g.j=!1,l;var m=l.value}catch(f){return b.g.g=null,A(b.g,f),G(b)}b.g.g=null;h.call(b.g,m);return G(b)}function G(b){for(;b.g.h;)try{var c=b.h(b.g);if(c)return b.g.j=!1,{value:c.value,done:!1}}catch(g){b.g.u=void 0,A(b.g,g)}b.g.j=!1;if(b.g.i){c=b.g.i;b.g.i=null;if(c.J)throw c.I;return{value:c.return,done:!0}}return{value:void 0,done:!0}}
+function H(b){this.next=function(c){z(b.g);b.g.g?c=F(b,b.g.g.next,c,b.g.o):(b.g.o(c),c=G(b));return c};this.throw=function(c){z(b.g);b.g.g?c=F(b,b.g.g["throw"],c,b.g.o):(A(b.g,c),c=G(b));return c};this.return=function(c){return E(b,c)};this[Symbol.iterator]=function(){return this}}function I(b){function c(h){return b.next(h)}function g(h){return b.throw(h)}return new Promise(function(h,l){function m(f){f.done?h(f.value):Promise.resolve(f.value).then(c,g).then(m,l)}m(b.next())})}
+x("Symbol",function(b){function c(m){if(this instanceof c)throw new TypeError("Symbol is not a constructor");return new g(h+(m||"")+"_"+l++,m)}function g(m,f){this.g=m;u(this,"description",{configurable:!0,writable:!0,value:f})}if(b)return b;g.prototype.toString=function(){return this.g};var h="jscomp_symbol_"+(Math.random()*1E9>>>0)+"_",l=0;return c});
+x("Symbol.iterator",function(b){if(b)return b;b=Symbol("Symbol.iterator");u(Array.prototype,b,{configurable:!0,writable:!0,value:function(){return J(q(this))}});return b});function J(b){b={next:b};b[Symbol.iterator]=function(){return this};return b}
+x("Promise",function(b){function c(f){this.h=0;this.i=void 0;this.g=[];this.u=!1;var a=this.j();try{f(a.resolve,a.reject)}catch(d){a.reject(d)}}function g(){this.g=null}function h(f){return f instanceof c?f:new c(function(a){a(f)})}if(b)return b;g.prototype.h=function(f){if(this.g==null){this.g=[];var a=this;this.i(function(){a.l()})}this.g.push(f)};var l=w.setTimeout;g.prototype.i=function(f){l(f,0)};g.prototype.l=function(){for(;this.g&&this.g.length;){var f=this.g;this.g=[];for(var a=0;a<f.length;++a){var d=
+f[a];f[a]=null;try{d()}catch(e){this.j(e)}}}this.g=null};g.prototype.j=function(f){this.i(function(){throw f;})};c.prototype.j=function(){function f(e){return function(k){d||(d=!0,e.call(a,k))}}var a=this,d=!1;return{resolve:f(this.D),reject:f(this.l)}};c.prototype.D=function(f){if(f===this)this.l(new TypeError("A Promise cannot resolve to itself"));else if(f instanceof c)this.G(f);else{a:switch(typeof f){case "object":var a=f!=null;break a;case "function":a=!0;break a;default:a=!1}a?this.C(f):this.o(f)}};
+c.prototype.C=function(f){var a=void 0;try{a=f.then}catch(d){this.l(d);return}typeof a=="function"?this.H(a,f):this.o(f)};c.prototype.l=function(f){this.v(2,f)};c.prototype.o=function(f){this.v(1,f)};c.prototype.v=function(f,a){if(this.h!=0)throw Error("Cannot settle("+f+", "+a+"): Promise already settled in state"+this.h);this.h=f;this.i=a;this.h===2&&this.F();this.K()};c.prototype.F=function(){var f=this;l(function(){if(f.B()){var a=w.console;typeof a!=="undefined"&&a.error(f.i)}},1)};c.prototype.B=
+function(){if(this.u)return!1;var f=w.CustomEvent,a=w.Event,d=w.dispatchEvent;if(typeof d==="undefined")return!0;typeof f==="function"?f=new f("unhandledrejection",{cancelable:!0}):typeof a==="function"?f=new a("unhandledrejection",{cancelable:!0}):(f=w.document.createEvent("CustomEvent"),f.initCustomEvent("unhandledrejection",!1,!0,f));f.promise=this;f.reason=this.i;return d(f)};c.prototype.K=function(){if(this.g!=null){for(var f=0;f<this.g.length;++f)m.h(this.g[f]);this.g=null}};var m=new g;c.prototype.G=
+function(f){var a=this.j();f.A(a.resolve,a.reject)};c.prototype.H=function(f,a){var d=this.j();try{f.call(a,d.resolve,d.reject)}catch(e){d.reject(e)}};c.prototype.then=function(f,a){function d(n,r){return typeof n=="function"?function(C){try{e(n(C))}catch(D){k(D)}}:r}var e,k,p=new c(function(n,r){e=n;k=r});this.A(d(f,e),d(a,k));return p};c.prototype.catch=function(f){return this.then(void 0,f)};c.prototype.A=function(f,a){function d(){switch(e.h){case 1:f(e.i);break;case 2:a(e.i);break;default:throw Error("Unexpected state: "+
+e.h);}}var e=this;this.g==null?m.h(d):this.g.push(d);this.u=!0};c.resolve=h;c.reject=function(f){return new c(function(a,d){d(f)})};c.race=function(f){return new c(function(a,d){for(var e=t(f),k=e.next();!k.done;k=e.next())h(k.value).A(a,d)})};c.all=function(f){var a=t(f),d=a.next();return d.done?h([]):new c(function(e,k){function p(C){return function(D){n[C]=D;r--;r==0&&e(n)}}var n=[],r=0;do n.push(void 0),r++,h(d.value).A(p(n.length-1),k),d=a.next();while(!d.done)})};return c});
+function K(b,c){return Object.prototype.hasOwnProperty.call(b,c)}x("Object.is",function(b){return b?b:function(c,g){return c===g?c!==0||1/c===1/g:c!==c&&g!==g}});x("Array.prototype.includes",function(b){return b?b:function(c,g){var h=this;h instanceof String&&(h=String(h));var l=h.length;g=g||0;for(g<0&&(g=Math.max(g+l,0));g<l;g++){var m=h[g];if(m===c||Object.is(m,c))return!0}return!1}});
+x("String.prototype.includes",function(b){return b?b:function(c,g){if(this==null)throw new TypeError("The 'this' value for String.prototype.includes must not be null or undefined");if(c instanceof RegExp)throw new TypeError("First argument to String.prototype.includes must not be a regular expression");return this.indexOf(c,g||0)!==-1}});
+x("WeakMap",function(b){function c(d){this.g=(a+=Math.random()+1).toString();if(d){d=t(d);for(var e;!(e=d.next()).done;)e=e.value,this.set(e[0],e[1])}}function g(){}function h(d){var e=typeof d;return e==="object"&&d!==null||e==="function"}function l(d){if(!K(d,f)){var e=new g;u(d,f,{value:e})}}function m(d){var e=Object[d];e&&(Object[d]=function(k){if(k instanceof g)return k;Object.isExtensible(k)&&l(k);return e(k)})}if(function(){if(!b||!Object.seal)return!1;try{var d=Object.seal({}),e=Object.seal({}),
+k=new b([[d,2],[e,3]]);if(k.get(d)!=2||k.get(e)!=3)return!1;k.delete(d);k.set(e,4);return!k.has(d)&&k.get(e)==4}catch(p){return!1}}())return b;var f="$jscomp_hidden_"+Math.random();m("freeze");m("preventExtensions");m("seal");var a=0;c.prototype.set=function(d,e){if(!h(d))throw Error("Invalid WeakMap key");l(d);if(!K(d,f))throw Error("WeakMap key fail: "+d);d[f][this.g]=e;return this};c.prototype.get=function(d){return h(d)&&K(d,f)?d[f][this.g]:void 0};c.prototype.has=function(d){return h(d)&&K(d,
+f)&&K(d[f],this.g)};c.prototype.delete=function(d){return h(d)&&K(d,f)&&K(d[f],this.g)?delete d[f][this.g]:!1};return c});
+x("Map",function(b){function c(){var a={};return a.m=a.next=a.head=a}function g(a,d){var e=a[1];return J(function(){if(e){for(;e.head!=a[1];)e=e.m;for(;e.next!=e.head;)return e=e.next,{done:!1,value:d(e)};e=null}return{done:!0,value:void 0}})}function h(a,d){var e=d&&typeof d;e=="object"||e=="function"?m.has(d)?e=m.get(d):(e=""+ ++f,m.set(d,e)):e="p_"+d;var k=a[0][e];if(k&&K(a[0],e))for(a=0;a<k.length;a++){var p=k[a];if(d!==d&&p.key!==p.key||d===p.key)return{id:e,list:k,index:a,entry:p}}return{id:e,
+list:k,index:-1,entry:void 0}}function l(a){this[0]={};this[1]=c();this.size=0;if(a){a=t(a);for(var d;!(d=a.next()).done;)d=d.value,this.set(d[0],d[1])}}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var a=Object.seal({x:4}),d=new b(t([[a,"s"]]));if(d.get(a)!="s"||d.size!=1||d.get({x:4})||d.set({x:4},"t")!=d||d.size!=2)return!1;var e=d.entries(),k=e.next();if(k.done||k.value[0]!=a||k.value[1]!="s")return!1;k=e.next();return k.done||k.value[0].x!=
+4||k.value[1]!="t"||!e.next().done?!1:!0}catch(p){return!1}}())return b;var m=new WeakMap;l.prototype.set=function(a,d){a=a===0?0:a;var e=h(this,a);e.list||(e.list=this[0][e.id]=[]);e.entry?e.entry.value=d:(e.entry={next:this[1],m:this[1].m,head:this[1],key:a,value:d},e.list.push(e.entry),this[1].m.next=e.entry,this[1].m=e.entry,this.size++);return this};l.prototype.delete=function(a){a=h(this,a);return a.entry&&a.list?(a.list.splice(a.index,1),a.list.length||delete this[0][a.id],a.entry.m.next=a.entry.next,
+a.entry.next.m=a.entry.m,a.entry.head=null,this.size--,!0):!1};l.prototype.clear=function(){this[0]={};this[1]=this[1].m=c();this.size=0};l.prototype.has=function(a){return!!h(this,a).entry};l.prototype.get=function(a){return(a=h(this,a).entry)&&a.value};l.prototype.entries=function(){return g(this,function(a){return[a.key,a.value]})};l.prototype.keys=function(){return g(this,function(a){return a.key})};l.prototype.values=function(){return g(this,function(a){return a.value})};l.prototype.forEach=
+function(a,d){for(var e=this.entries(),k;!(k=e.next()).done;)k=k.value,a.call(d,k[1],k[0],this)};l.prototype[Symbol.iterator]=l.prototype.entries;var f=0;return l});
+x("Set",function(b){function c(g){this.g=new Map;if(g){g=t(g);for(var h;!(h=g.next()).done;)this.add(h.value)}this.size=this.g.size}if(function(){if(!b||typeof b!="function"||!b.prototype.entries||typeof Object.seal!="function")return!1;try{var g=Object.seal({x:4}),h=new b(t([g]));if(!h.has(g)||h.size!=1||h.add(g)!=h||h.size!=1||h.add({x:4})!=h||h.size!=2)return!1;var l=h.entries(),m=l.next();if(m.done||m.value[0]!=g||m.value[1]!=g)return!1;m=l.next();return m.done||m.value[0]==g||m.value[0].x!=4||
+m.value[1]!=m.value[0]?!1:l.next().done}catch(f){return!1}}())return b;c.prototype.add=function(g){g=g===0?0:g;this.g.set(g,g);this.size=this.g.size;return this};c.prototype.delete=function(g){g=this.g.delete(g);this.size=this.g.size;return g};c.prototype.clear=function(){this.g.clear();this.size=0};c.prototype.has=function(g){return this.g.has(g)};c.prototype.entries=function(){return this.g.entries()};c.prototype.values=function(){return this.g.values()};c.prototype.keys=c.prototype.values;c.prototype[Symbol.iterator]=
+c.prototype.values;c.prototype.forEach=function(g,h){var l=this;this.g.forEach(function(m){return g.call(h,m,m,l)})};return c});(function(){function b(){return m?Promise.resolve(m):f?f:f=fetch("https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json").then(function(a){if(!a.ok)throw Error("HTTP error! status: "+a.status+" fetching https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json");return a.json()}).then(function(a){if(!Array.isArray(a))throw new TypeError("Fetched icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json is not an array.");
+return m=a}).catch(function(a){console.error("IconChecker: Failed to load valid icon names from https://www.gstatic.com/bard-maui/resources/material-design-icon-names.804824289.json.",a);f=null;throw a;})}function c(a){var d,e,k,p;return I(new H(new B(function(n){switch(n.h){case 1:d=(a.textContent||"").trim();if(!d||a.classList.contains("js-replaced-missing-icon")&&d==="radio_button_unchecked")return n.return();e=window.getComputedStyle(a);if(e.display==="none"||e.visibility==="hidden")return n.return();
+n.l=2;var r=b();n.h=4;return{value:r};case 4:k=n.u;n.h=3;n.l=0;break;case 2:return n.l=0,n.i=null,console.warn('IconChecker: Skipping check for icon "'+d+'" as valid names could not be loaded.'),n.return();case 3:(p=k.includes(d))?a.classList.contains("js-replaced-missing-icon")&&a.classList.remove("js-replaced-missing-icon"):d==="radio_button_unchecked"&&a.classList.contains("js-replaced-missing-icon")||(a.textContent="radio_button_unchecked",a.classList.add("js-replaced-missing-icon")),n.h=0}})))}
+function g(a){a=a===void 0?document.body:a;a.querySelectorAll(l).forEach(function(d){c(d)})}function h(){b().catch(function(){});document.fonts.ready.then(function(){requestAnimationFrame(function(){g(document.body);(new MutationObserver(function(a){var d=new Set;a=t(a);for(var e=a.next();!e.done;e=a.next())if(e=e.value,e.type==="childList")e.addedNodes.forEach(function(p){p.nodeType===Node.ELEMENT_NODE&&(p.matches(l)&&d.add(p),p.querySelectorAll(l).forEach(function(n){d.add(n)}))});else if(e.type===
+"attributes"&&e.attributeName==="class"){var k=e.target;e.target.nodeType===Node.ELEMENT_NODE&&k.matches(l)&&d.add(k)}else e.type==="characterData"&&e.target.parentNode&&(e=e.target.parentNode,e.nodeType===Node.ELEMENT_NODE&&e.matches(l)&&d.add(e));d.size>0&&setTimeout(function(){d.forEach(function(p){c(p)})},500)})).observe(document.body,{childList:!0,subtree:!0,attributes:!0,attributeFilter:["class"],characterData:!0})})}).catch(function(a){console.error("IconChecker: Font loading error. Scanning icons anyway.",
+a);requestAnimationFrame(function(){g(document.body)})})}var l=["material-icons","material-symbols-outlined","material-symbols-rounded","material-symbols-sharp"].map(function(a){return"."+a}).join(","),m=null,f=null;document.readyState==="loading"?document.addEventListener("DOMContentLoaded",function(){h()}):h()})();}).call(this);
+
+</script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrewAI Studio: Multi-Agent Simulation</title>
+    
+    <!-- Dependencies -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.2/marked.min.js"></script>
+
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --sidebar-width: 320px;
+            --terminal-bg: #0f172a;
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; overflow: hidden; }
+        .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+        /* Layout Transitions */
+        .sidebar { transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .main-content { transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+
+        /* Presentation Mode */
+        body.presentation-mode .sidebar { margin-left: -320px; }
+        body.presentation-mode header { padding: 1rem 2rem; }
+        body.presentation-mode .config-controls { display: none; }
+        body.presentation-mode .terminal-container { height: 150px; opacity: 0.8; }
+        body.presentation-mode .output-container { height: 70vh; font-size: 1.1em; }
+
+        /* Terminal Styling */
+        .terminal-scroll::-webkit-scrollbar { width: 6px; }
+        .terminal-scroll::-webkit-scrollbar-track { background: var(--terminal-bg); }
+        .terminal-scroll::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+        
+        .log-entry { animation: fadeIn 0.2s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(2px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Agent Active States */
+        .agent-card { transition: all 0.3s ease; border: 2px solid transparent; }
+        .agent-card.active { 
+            border-color: #6366f1; 
+            background: #eff6ff;
+            box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Connector Animation */
+        .connector-line {
+            height: 2px;
+            background: #e2e8f0;
+            position: relative;
+            overflow: hidden;
+        }
+        .connector-progress {
+            position: absolute;
+            top: 0; left: 0; bottom: 0;
+            width: 0%;
+            background: #6366f1;
+            transition: width 0.5s linear;
+        }
+
+        /* Markdown Styles */
+        .prose h1 { font-size: 1.8em; font-weight: 800; color: #1e293b; margin-bottom: 0.5em; }
+        .prose h2 { font-size: 1.4em; font-weight: 700; color: #334155; margin-top: 1.2em; margin-bottom: 0.5em; }
+        .prose p { margin-bottom: 1em; line-height: 1.6; color: #475569; }
+        .prose strong { color: #0f172a; font-weight: 600; }
+        .prose ul { list-style: disc; padding-left: 1.5em; margin-bottom: 1em; color: #475569; }
+    </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.pointer-events-none{pointer-events:none}.absolute{position:absolute}.relative{position:relative}.sticky{position:sticky}.inset-0{inset:0px}.-top-3{top:-0.75rem}.bottom-0{bottom:0px}.left-0{left:0px}.left-1\/2{left:50%}.left-4{left:1rem}.right-3{right:0.75rem}.top-0{top:0px}.top-2\.5{top:0.625rem}.z-10{z-index:10}.z-20{z-index:20}.z-30{z-index:30}.mx-auto{margin-left:auto;margin-right:auto}.mb-1{margin-bottom:0.25rem}.mb-3{margin-bottom:0.75rem}.mr-3{margin-right:0.75rem}.mt-0\.5{margin-top:0.125rem}.mt-1{margin-top:0.25rem}.mt-2{margin-top:0.5rem}.block{display:block}.flex{display:flex}.grid{display:grid}.hidden{display:none}.h-10{height:2.5rem}.h-16{height:4rem}.h-2{height:0.5rem}.h-2\.5{height:0.625rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-\[2px\]{height:2px}.h-full{height:100%}.h-screen{height:100vh}.min-h-\[250px\]{min-height:250px}.min-h-\[400px\]{min-height:400px}.w-0{width:0px}.w-10{width:2.5rem}.w-16{width:4rem}.w-2{width:0.5rem}.w-2\.5{width:0.625rem}.w-6{width:1.5rem}.w-64{width:16rem}.w-8{width:2rem}.w-\[320px\]{width:320px}.w-full{width:100%}.w-screen{width:100vw}.min-w-\[50px\]{min-width:50px}.max-w-3xl{max-width:48rem}.max-w-6xl{max-width:72rem}.max-w-none{max-width:none}.flex-1{flex:1 1 0%}.flex-shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.transform{transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.appearance-none{-webkit-appearance:none;appearance:none}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1\.5{gap:0.375rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.space-y-8 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.scroll-smooth{scroll-behavior:smooth}.whitespace-pre-wrap{white-space:pre-wrap}.rounded{border-radius:0.25rem}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-2{border-width:2px}.border-b{border-bottom-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-indigo-500\/50{border-color:rgb(99 102 241 / 0.5)}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.border-slate-700{--tw-border-opacity:1;border-color:rgb(51 65 85 / var(--tw-border-opacity, 1))}.border-slate-800{--tw-border-opacity:1;border-color:rgb(30 41 59 / var(--tw-border-opacity, 1))}.bg-\[\#0f172a\]{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-\[\#1e293b\]{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-blue-500\/20{background-color:rgb(59 130 246 / 0.2)}.bg-green-500{--tw-bg-opacity:1;background-color:rgb(34 197 94 / var(--tw-bg-opacity, 1))}.bg-indigo-500{--tw-bg-opacity:1;background-color:rgb(99 102 241 / var(--tw-bg-opacity, 1))}.bg-indigo-600{--tw-bg-opacity:1;background-color:rgb(79 70 229 / var(--tw-bg-opacity, 1))}.bg-purple-100{--tw-bg-opacity:1;background-color:rgb(243 232 255 / var(--tw-bg-opacity, 1))}.bg-purple-50{--tw-bg-opacity:1;background-color:rgb(250 245 255 / var(--tw-bg-opacity, 1))}.bg-purple-500\/20{background-color:rgb(168 85 247 / 0.2)}.bg-red-500{--tw-bg-opacity:1;background-color:rgb(239 68 68 / var(--tw-bg-opacity, 1))}.bg-slate-100{--tw-bg-opacity:1;background-color:rgb(241 245 249 / var(--tw-bg-opacity, 1))}.bg-slate-400{--tw-bg-opacity:1;background-color:rgb(148 163 184 / var(--tw-bg-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-slate-800{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.bg-slate-800\/50{background-color:rgb(30 41 59 / 0.5)}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-yellow-500{--tw-bg-opacity:1;background-color:rgb(234 179 8 / var(--tw-bg-opacity, 1))}.p-2{padding:0.5rem}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pt-6{padding-top:1.5rem}.text-center{text-align:center}.font-mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-\[10px\]{font-size:10px}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-bold{font-weight:700}.font-medium{font-weight:500}.font-semibold{font-weight:600}.uppercase{text-transform:uppercase}.leading-relaxed{line-height:1.625}.tracking-tight{letter-spacing:-0.025em}.tracking-wide{letter-spacing:0.025em}.tracking-wider{letter-spacing:0.05em}.text-blue-400{--tw-text-opacity:1;color:rgb(96 165 250 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-green-600{--tw-text-opacity:1;color:rgb(22 163 74 / var(--tw-text-opacity, 1))}.text-indigo-400{--tw-text-opacity:1;color:rgb(129 140 248 / var(--tw-text-opacity, 1))}.text-purple-400{--tw-text-opacity:1;color:rgb(192 132 252 / var(--tw-text-opacity, 1))}.text-purple-600{--tw-text-opacity:1;color:rgb(147 51 234 / var(--tw-text-opacity, 1))}.text-purple-700{--tw-text-opacity:1;color:rgb(126 34 206 / var(--tw-text-opacity, 1))}.text-slate-200{--tw-text-opacity:1;color:rgb(226 232 240 / var(--tw-text-opacity, 1))}.text-slate-300{--tw-text-opacity:1;color:rgb(203 213 225 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.text-slate-800{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.placeholder-slate-600::placeholder{--tw-placeholder-opacity:1;color:rgb(71 85 105 / var(--tw-placeholder-opacity, 1))}.opacity-0{opacity:0}.opacity-60{opacity:0.6}.opacity-\[0\.03\]{opacity:0.03}.shadow-lg{--tw-shadow:0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-sm{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-indigo-500\/20{--tw-shadow-color:rgb(99 102 241 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.shadow-indigo-900\/20{--tw-shadow-color:rgb(49 46 129 / 0.2);--tw-shadow:var(--tw-shadow-colored)}.transition-all{transition-property:all;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.duration-500{transition-duration:500ms}.duration-700{transition-duration:700ms}.hover\:-translate-y-0\.5:hover{--tw-translate-y:-0.125rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.hover\:bg-indigo-50:hover{--tw-bg-opacity:1;background-color:rgb(238 242 255 / var(--tw-bg-opacity, 1))}.hover\:bg-indigo-500:hover{--tw-bg-opacity:1;background-color:rgb(99 102 241 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-700:hover{--tw-bg-opacity:1;background-color:rgb(51 65 85 / var(--tw-bg-opacity, 1))}.hover\:text-indigo-600:hover{--tw-text-opacity:1;color:rgb(79 70 229 / var(--tw-text-opacity, 1))}.focus\:outline-none:focus{outline:2px solid transparent;outline-offset:2px}.focus\:ring-1:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-2:focus{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(2px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.focus\:ring-indigo-500:focus{--tw-ring-opacity:1;--tw-ring-color:rgb(99 102 241 / var(--tw-ring-opacity, 1))}.active\:translate-y-0:active{--tw-translate-y:0px;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@media (min-width: 1024px){.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}}</style></head>
+<body class="flex h-screen w-screen">
+
+    <!-- Sidebar: Configuration -->
+    <aside class="sidebar w-[320px] bg-slate-900 text-slate-300 flex flex-col border-r border-slate-800 flex-shrink-0 z-20">
+        <!-- Brand -->
+        <div class="h-16 flex items-center px-6 border-b border-slate-800">
+            <div class="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center mr-3 shadow-lg shadow-indigo-500/20">
+                <span class="material-symbols-outlined text-white text-xl">groups</span>
+            </div>
+            <div>
+                <h1 class="font-bold text-white tracking-tight">CrewAI Studio</h1>
+                <div class="text-[10px] text-slate-500 font-mono">v2.4.0 • Sequential</div>
+            </div>
+        </div>
+
+        <!-- Scrollable Config -->
+        <div class="flex-1 overflow-y-auto p-6 space-y-8">
+            <!-- Topic Selection -->
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Simulation Parameters</label>
+                <div class="space-y-4">
+                    <div class="relative">
+                        <select id="topicSelect" class="w-full bg-slate-800 text-white text-sm border border-slate-700 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-2 focus:ring-indigo-500 appearance-none">
+                            <option value="ai_trends">Future of Agentic AI (2025)</option>
+                            <option value="climate_tech">Climate Tech Breakthroughs</option>
+                            <option value="cybersecurity">Next-Gen Cybersecurity</option>
+                            <option value="custom">✨ Custom Research Topic...</option>
+                        </select>
+                        <div class="absolute right-3 top-2.5 pointer-events-none text-slate-500">
+                            <span class="material-symbols-outlined text-xl">expand_more</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Custom Input (Hidden) -->
+                    <div id="customInputWrapper" class="hidden transition-all duration-300">
+                        <label class="text-[10px] text-indigo-400 mb-1 block">Enter Topic Name</label>
+                        <input type="text" id="customTopic" placeholder="e.g. Quantum Computing" class="w-full bg-slate-800 text-white text-sm border border-indigo-500/50 rounded-lg px-3 py-2.5 focus:outline-none focus:ring-1 focus:ring-indigo-500 placeholder-slate-600">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agent Configuration (Visual Only) -->
+            <div>
+                <label class="block text-xs font-bold text-slate-500 uppercase tracking-wider mb-3">Agent Roster</label>
+                <div class="space-y-3">
+                    <!-- Agent 1 -->
+                    <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 flex items-start gap-3">
+                        <div class="w-6 h-6 rounded bg-blue-500/20 text-blue-400 flex items-center justify-center mt-0.5">
+                            <span class="material-symbols-outlined text-xs">search</span>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-slate-200">Research Analyst</div>
+                            <div class="text-[10px] text-slate-500 mt-0.5">Role: Gather Data</div>
+                            <div class="text-[10px] text-slate-600 font-mono mt-1">Tool: SerperDev</div>
+                        </div>
+                    </div>
+                    <!-- Agent 2 -->
+                    <div class="bg-slate-800/50 p-3 rounded-lg border border-slate-700 flex items-start gap-3">
+                        <div class="w-6 h-6 rounded bg-purple-500/20 text-purple-400 flex items-center justify-center mt-0.5">
+                            <span class="material-symbols-outlined text-xs">edit_note</span>
+                        </div>
+                        <div>
+                            <div class="text-xs font-bold text-slate-200">Content Strategist</div>
+                            <div class="text-[10px] text-slate-500 mt-0.5">Role: Write Blog</div>
+                            <div class="text-[10px] text-slate-600 font-mono mt-1">LLM: Llama 3.3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Download Section -->
+            <div class="pt-6 border-t border-slate-800">
+                <button onclick="downloadSource()" class="w-full flex items-center justify-center gap-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-medium rounded-lg transition-colors border border-slate-700">
+                    <span class="material-symbols-outlined text-sm">download</span>
+                    Download Source for GitHub
+                </button>
+                <p class="text-[10px] text-slate-600 text-center mt-2">Download this single HTML file to deploy directly to GitHub Pages or Netlify.</p>
+            </div>
+        </div>
+
+        <!-- Sidebar Footer -->
+        <div class="p-6 border-t border-slate-800 bg-slate-900 sticky bottom-0 z-30">
+            <button id="kickoffBtn" onclick="runSimulation()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-semibold py-3 px-4 rounded-xl shadow-lg shadow-indigo-900/20 flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5 active:translate-y-0">
+                <span class="material-symbols-outlined">rocket_launch</span>
+                <span>Deploy Crew</span>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content flex-1 flex flex-col h-full bg-slate-50 relative overflow-hidden">
+        
+        <!-- Header -->
+        <header class="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-6 flex-shrink-0 z-10">
+            <div class="flex items-center gap-4">
+                <h2 id="projectTitle" class="font-bold text-slate-800 text-lg">New Project</h2>
+                <div id="statusBadge" class="hidden px-2.5 py-0.5 rounded-full text-xs font-semibold bg-slate-100 text-slate-500 flex items-center gap-1.5">
+                    <div class="status-dot w-2 h-2 rounded-full bg-slate-400"></div>
+                    <span>IDLE</span>
+                </div>
+            </div>
+            <div class="flex items-center gap-3">
+                <button id="presBtn" onclick="togglePresentation()" class="text-slate-500 hover:text-indigo-600 hover:bg-indigo-50 px-3 py-2 rounded-lg text-sm font-medium flex items-center gap-2 transition-all">
+                    <span class="material-symbols-outlined">present_to_all</span>
+                    <span>Presentation Mode</span>
+                </button>
+            </div>
+        </header>
+
+        <!-- Canvas -->
+        <div class="flex-1 overflow-y-auto p-6 scroll-smooth" id="mainCanvas">
+            
+            <div class="max-w-6xl mx-auto h-full flex flex-col gap-6">
+                
+                <!-- 1. Visualization Area -->
+                <div class="bg-white rounded-xl border border-slate-200 p-8 shadow-sm flex flex-col justify-center relative overflow-hidden min-h-[250px]">
+                    <!-- Background Grid -->
+                    <div class="absolute inset-0 opacity-[0.03]" style="background-image: radial-gradient(#6366f1 1px, transparent 1px); background-size: 20px 20px;"></div>
+                    
+                    <div class="relative z-10 flex items-center justify-center gap-12 max-w-3xl mx-auto w-full">
+                        
+                        <!-- Agent 1 -->
+                        <div id="agentResearch" class="agent-card w-64 bg-white p-5 rounded-xl border-2 border-slate-100 shadow-sm relative">
+                            <div class="absolute -top-3 left-4 bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide">Step 1</div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center">
+                                    <span class="material-symbols-outlined">search</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-slate-800 text-sm">Researcher</div>
+                                    <div class="text-[10px] text-slate-400 font-mono">Agent</div>
+                                </div>
+                            </div>
+                            <div id="logResearch" class="text-xs text-slate-500 font-mono bg-slate-50 p-2 rounded h-16 overflow-hidden border border-slate-100">
+                                Waiting for tasks...
+                            </div>
+                        </div>
+
+                        <!-- Connector -->
+                        <div class="flex-1 h-[2px] bg-slate-100 relative min-w-[50px]">
+                            <div id="connectorFlow" class="absolute top-0 left-0 h-full w-0 bg-indigo-500 transition-all duration-700"></div>
+                            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-white px-2 text-[10px] text-slate-400 font-medium">Sequential</div>
+                        </div>
+
+                        <!-- Agent 2 -->
+                        <div id="agentWriter" class="agent-card w-64 bg-white p-5 rounded-xl border-2 border-slate-100 shadow-sm relative opacity-60">
+                            <div class="absolute -top-3 left-4 bg-purple-100 text-purple-700 px-2 py-0.5 rounded text-[10px] font-bold uppercase tracking-wide">Step 2</div>
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center">
+                                    <span class="material-symbols-outlined">edit_note</span>
+                                </div>
+                                <div>
+                                    <div class="font-bold text-slate-800 text-sm">Writer</div>
+                                    <div class="text-[10px] text-slate-400 font-mono">Agent</div>
+                                </div>
+                            </div>
+                            <div id="logWriter" class="text-xs text-slate-500 font-mono bg-slate-50 p-2 rounded h-16 overflow-hidden border border-slate-100">
+                                Waiting for handoff...
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 2. Bottom Panel: Terminal & Output -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 flex-1 min-h-[400px]">
+                    
+                    <!-- Terminal -->
+                    <div class="terminal-container bg-[#0f172a] rounded-xl border border-slate-700 flex flex-col overflow-hidden shadow-lg transition-all duration-500">
+                        <div class="bg-[#1e293b] px-4 py-2 border-b border-slate-700 flex justify-between items-center">
+                            <div class="flex items-center gap-2 text-slate-400">
+                                <span class="material-symbols-outlined text-sm">terminal</span>
+                                <span class="text-xs font-mono">crewai run --verbose</span>
+                            </div>
+                            <div class="flex gap-1.5">
+                                <div class="w-2.5 h-2.5 rounded-full bg-red-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-yellow-500"></div>
+                                <div class="w-2.5 h-2.5 rounded-full bg-green-500"></div>
+                            </div>
+                        </div>
+                        <div id="terminalOutput" class="p-4 font-mono text-xs text-slate-300 overflow-y-auto flex-1 terminal-scroll whitespace-pre-wrap leading-relaxed">
+                            <span class="text-slate-500"># System initialized. Ready to deploy.</span>
+                        </div>
+                    </div>
+
+                    <!-- Output Artifact -->
+                    <div class="output-container bg-white rounded-xl border border-slate-200 flex flex-col overflow-hidden shadow-lg transition-all duration-500 relative">
+                        <!-- Empty State -->
+                        <div id="emptyState" class="absolute inset-0 flex flex-col items-center justify-center text-center p-8 bg-white z-10">
+                            <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mb-3">
+                                <span class="material-symbols-outlined text-3xl text-slate-300">article</span>
+                            </div>
+                            <h3 class="text-slate-700 font-bold text-sm">No Content Generated</h3>
+                            <p class="text-slate-500 text-xs mt-1">Run the simulation to view the final blog post.</p>
+                        </div>
+                        
+                        <!-- Content Header -->
+                        <div class="px-5 py-3 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                            <div class="flex items-center gap-2 text-green-600">
+                                <span class="material-symbols-outlined text-sm">check_circle</span>
+                                <span class="text-xs font-bold uppercase tracking-wide">Final Artifact</span>
+                            </div>
+                            <button onclick="copyOutput()" class="text-slate-400 hover:text-indigo-600 transition-colors">
+                                <span class="material-symbols-outlined text-sm">content_copy</span>
+                            </button>
+                        </div>
+                        <!-- Markdown Content -->
+                        <div id="markdownOutput" class="p-8 prose prose-sm prose-slate max-w-none overflow-y-auto flex-1 terminal-scroll opacity-0 transition-opacity duration-500">
+                            <!-- Dynamic Content -->
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Logic -->
+    <script>
+        // --- Data ---
+        const KNOWLEDGE_BASE = {
+            ai_trends: {
+                query: "Future of Agentic AI (2025)",
+                findings: [
+                    "Transition from Chatbots to 'Action Agents' that execute tasks.",
+                    "Inference Scaling: Models spending compute time 'thinking' before answering.",
+                    "Multi-Agent Orchestration becomes standard enterprise architecture.",
+                    "Autonomous coding agents merging with CI/CD pipelines."
+                ],
+                title: "From Chatbots to Colleagues: The Rise of Agentic AI",
+                intro: "The era of the passive chatbot is ending. 2025 marks the dawn of Agentic AI—systems that don't just talk, but plan, reason, and execute complex workflows autonomously.",
+                body: `### The Agentic Shift
+We are witnessing a fundamental shift in AI capability. Unlike traditional LLMs that predict the next token, **Agentic Systems** are goal-oriented. They can break down a high-level objective (e.g., "Plan a marketing campaign") into sub-tasks and execute them using external tools.
+
+### Thinking Before Acting
+New architectures are prioritizing **Inference Scaling**. By allowing models to "think" for seconds or minutes before responding, we are seeing massive gains in reasoning capabilities, particularly in math, coding, and strategic planning.
+
+### The Multi-Agent Future
+Why hire one genius when you can have a team? **Multi-Agent Orchestration** allows specialized agents (a Researcher, a Writer, a Coder) to collaborate. This separation of concerns significantly reduces hallucinations and improves the quality of the final output.`
+            },
+            climate_tech: {
+                query: "Climate Tech Breakthroughs",
+                findings: [
+                    "Solid-state batteries entering mass production for EVs.",
+                    "AI-optimized smart grids reducing energy waste by 18%.",
+                    "Direct Air Capture (DAC) costs dropping below $100/ton.",
+                    "Green Hydrogen infrastructure scaling globally."
+                ],
+                title: "Decarbonizing 2025: The Tech Saving Our Planet",
+                intro: "Technology is finally catching up to the urgency of the climate crisis. In 2025, we are seeing lab-bench breakthroughs transform into scalable industrial solutions.",
+                body: `### The Battery Revolution
+**Solid-State Batteries** have arrived. Offering higher density, faster charging, and lower fire risk, they are set to eliminate range anxiety and accelerate EV adoption globally.
+
+### Smart Grids & AI
+The grid is getting a brain upgrade. **AI-driven load balancing** is allowing utilities to integrate variable renewable sources like wind and solar more aggressively, stabilizing the grid without relying on fossil-fuel peaker plants.
+
+### Scaling Carbon Removal
+It's no longer just about emission reduction; it's about removal. **Direct Air Capture (DAC)** technology has hit critical efficiency milestones, making the removal of atmospheric CO2 a commercially viable industry.`
+            },
+            cybersecurity: {
+                query: "Next-Gen Cybersecurity",
+                findings: [
+                    "Zero Trust Architecture adoption hits 80% in Fortune 500.",
+                    "AI-powered threat detection responding in milliseconds.",
+                    "Post-Quantum Cryptography standards finalized by NIST.",
+                    "Rise of 'Deepfake' social engineering attacks."
+                ],
+                title: "The Cyber Shield: Security Trends in 2025",
+                intro: "As threats become more sophisticated, so do our defenses. 2025 is the year cybersecurity moves from reactive patching to proactive, AI-driven immunity.",
+                body: `### AI vs. AI
+The cybersecurity battlefield is now algorithmic. **AI-driven threat detection** systems are identifying and neutralizing zero-day attacks in milliseconds, faster than any human analyst could react.
+
+### Preparing for Q-Day
+With quantum computing on the horizon, the race for encryption is on. **Post-Quantum Cryptography (PQC)** standards are being rolled out to ensure that today's data remains secure against tomorrow's quantum computers.
+
+### The Deepfake Threat
+Identity is the new perimeter. As generative AI makes **deepfakes** indistinguishable from reality, organizations are adopting biometric verification and cryptographic watermarking to verify human identity.`
+            }
+        };
+
+        // --- State ---
+        let isRunning = false;
+        let isPresentation = false;
+
+        // --- Elements ---
+        const els = {
+            topicSelect: document.getElementById('topicSelect'),
+            customWrapper: document.getElementById('customInputWrapper'),
+            customTopic: document.getElementById('customTopic'),
+            kickoffBtn: document.getElementById('kickoffBtn'),
+            projectTitle: document.getElementById('projectTitle'),
+            statusBadge: document.getElementById('statusBadge'),
+            agentResearch: document.getElementById('agentResearch'),
+            agentWriter: document.getElementById('agentWriter'),
+            logResearch: document.getElementById('logResearch'),
+            logWriter: document.getElementById('logWriter'),
+            connector: document.getElementById('connectorFlow'),
+            terminal: document.getElementById('terminalOutput'),
+            markdown: document.getElementById('markdownOutput'),
+            emptyState: document.getElementById('emptyState'),
+            presBtn: document.getElementById('presBtn')
+        };
+
+        // --- Event Listeners ---
+        els.topicSelect.addEventListener('change', (e) => {
+            if(e.target.value === 'custom') {
+                els.customWrapper.classList.remove('hidden');
+                setTimeout(() => els.customTopic.focus(), 100);
+            } else {
+                els.customWrapper.classList.add('hidden');
+            }
+        });
+
+        // --- Functions ---
+        
+        const delay = ms => new Promise(res => setTimeout(res, ms));
+
+        function getTopicData() {
+            const val = els.topicSelect.value;
+            if (val === 'custom') {
+                const topic = els.customTopic.value || "Generative AI";
+                return {
+                    query: topic,
+                    findings: [
+                        `Rapid growth in ${topic} adoption across industries.`,
+                        `New regulatory frameworks emerging for ${topic}.`,
+                        `Key technological breakthroughs reducing costs.`,
+                        `Increased venture capital funding in ${topic}.`
+                    ],
+                    title: `The Future of ${topic}: Analysis & Trends`,
+                    intro: `Our autonomous crew has scoured the web to bring you the latest insights on ${topic}. Here is what the data says about the road ahead.`,
+                    body: `### Market Momentum\nInvestment in **${topic}** is accelerating. We are seeing a shift from experimental pilots to full-scale production deployments.\n\n### Technological Leaps\nRecent breakthroughs identified by our Research Agent suggest that barrier to entry is dropping. Efficiency gains are driving widespread adoption.\n\n### The Road Ahead\nExperts predict that ${topic} will continue to dominate the strategic conversation in 2025 and beyond.`
+                };
+            }
+            return KNOWLEDGE_BASE[val];
+        }
+
+        function log(msg, type='info') {
+            const time = new Date().toLocaleTimeString('en-US', { hour12: false });
+            let color = 'text-slate-300';
+            let label = 'INFO';
+            let labelColor = 'text-slate-500';
+
+            if(type === 'system') { label = 'SYSTEM'; labelColor = 'text-indigo-400'; }
+            if(type === 'agent') { label = 'AGENT'; labelColor = 'text-green-400'; }
+            if(type === 'tool') { label = 'TOOL'; labelColor = 'text-yellow-400'; color = 'text-yellow-100'; }
+
+            const html = `
+                <div class="log-entry mb-1">
+                    <span class="text-slate-600">[${time}]</span> 
+                    <span class="${labelColor} font-bold text-[10px] w-12 inline-block">${label}</span> 
+                    <span class="${color}">${msg}</span>
+                </div>`;
+            
+            els.terminal.insertAdjacentHTML('beforeend', html);
+            els.terminal.scrollTop = els.terminal.scrollHeight;
+        }
+
+        async function runSimulation() {
+            if(isRunning) return;
+            isRunning = true;
+
+            const data = getTopicData();
+            els.projectTitle.innerText = `Project: ${data.query}`;
+            
+            // Reset UI
+            els.kickoffBtn.disabled = true;
+            els.kickoffBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            els.kickoffBtn.innerHTML = '<span class="material-symbols-outlined animate-spin">progress_activity</span> Deploying...';
+            els.statusBadge.classList.remove('hidden');
+            els.statusBadge.innerHTML = '<div class="w-2 h-2 rounded-full bg-indigo-500 animate-pulse"></div><span>RUNNING</span>';
+            
+            els.terminal.innerHTML = '';
+            els.markdown.innerHTML = '';
+            els.markdown.classList.add('opacity-0');
+            els.emptyState.classList.remove('hidden');
+            els.connector.style.width = '0%';
+            els.agentWriter.classList.add('opacity-60');
+
+            // Start
+            log(`Initializing Crew for topic: "${data.query}"`, 'system');
+            await delay(800);
+
+            // Step 1: Researcher
+            log(`Activating Agent: Research Analyst`, 'system');
+            els.agentResearch.classList.add('active');
+            els.logResearch.innerHTML = `<span class="text-blue-600">></span> Analyzing request...<br><span class="text-blue-600">></span> Query: "${data.query}"`;
+            await delay(1000);
+
+            log(`Searching internet using SerperDevTool...`, 'tool');
+            els.logResearch.innerHTML += `<br><span class="text-yellow-600">></span> Tool: SerperDev (Searching...)`;
+            await delay(1500);
+
+            log(`Found ${data.findings.length} relevant articles. Parsing...`, 'tool');
+            els.logResearch.innerHTML += `<br><span class="text-green-600">></span> Data retrieved. Extracting insights.`;
+            await delay(1000);
+
+            log(`Research complete. Handing off to Writer.`, 'agent');
+            els.agentResearch.classList.remove('active');
+            
+            // Transition
+            els.connector.style.width = '100%';
+            await delay(600);
+
+            // Step 2: Writer
+            log(`Activating Agent: Content Strategist`, 'system');
+            els.agentWriter.classList.remove('opacity-60');
+            els.agentWriter.classList.add('active');
+            els.logWriter.innerHTML = `<span class="text-purple-600">></span> Research context received.<br><span class="text-purple-600">></span> Drafting blog post...`;
+            await delay(1000);
+
+            log(`Generating content using Llama 3.3...`, 'tool');
+            els.logWriter.innerHTML += `<br><span class="text-yellow-600">></span> Model: Llama 3.3 (Generating...)`;
+            await delay(1800);
+
+            log(`Content finalized. Formatting markdown.`, 'agent');
+            els.logWriter.innerHTML += `<br><span class="text-green-600">></span> Final artifact ready.`;
+            await delay(800);
+
+            // Finish
+            els.agentWriter.classList.remove('active');
+            els.statusBadge.innerHTML = '<div class="w-2 h-2 rounded-full bg-green-500"></div><span>COMPLETED</span>';
+            log(`Workflow finished successfully.`, 'system');
+            
+            // Render Output
+            renderOutput(data);
+            
+            els.kickoffBtn.disabled = false;
+            els.kickoffBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            els.kickoffBtn.innerHTML = '<span class="material-symbols-outlined">rocket_launch</span> Deploy Crew';
+            isRunning = false;
+        }
+
+        function renderOutput(data) {
+            const md = `
+# ${data.title}
+
+**By Content Strategist** • *Generated via CrewAI*
+
+${data.intro}
+
+${data.body}
+            `;
+            els.markdown.innerHTML = marked.parse(md);
+            els.emptyState.classList.add('hidden');
+            els.markdown.classList.remove('opacity-0');
+        }
+
+        function togglePresentation() {
+            isPresentation = !isPresentation;
+            document.body.classList.toggle('presentation-mode');
+            if(isPresentation) {
+                els.presBtn.classList.add('bg-indigo-50', 'text-indigo-700');
+                els.presBtn.innerHTML = '<span class="material-symbols-outlined">close</span> Exit Presentation';
+            } else {
+                els.presBtn.classList.remove('bg-indigo-50', 'text-indigo-700');
+                els.presBtn.innerHTML = '<span class="material-symbols-outlined">present_to_all</span> Presentation Mode';
+            }
+        }
+
+        function copyOutput() {
+            const text = els.markdown.innerText;
+            navigator.clipboard.writeText(text);
+            alert("Blog post copied to clipboard!");
+        }
+
+        function downloadSource() {
+            // Get the current HTML
+            const html = document.documentElement.outerHTML;
+            const blob = new Blob([html], { type: 'text/html' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'index.html'; // Default for GH Pages
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+
+
+</body></html>
